@@ -4,54 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Machine</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
-
-        body{
-            background: url(background/drums.jpg) no-repeat center center fixed;
-            background-size: cover;
-        }
-        .key{
-            width: 2em;
-            height: 3em;
-            display: inline-block;
-            text-align: center;
-            margin-left: 1em;
-            color: white;
-            padding-top: 0.7em;
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.2em;
-        }
-        .hover{
-            opacity: 0.5;
-        }
-
-        .keys{
-
-        }
-        audio {
-            display: none;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
+    <div class="container">
     <div class="keys">
     <kbd class="key">A › boom</kbd>
     </div>
     <div class="keys">
-    <kbd class="key">S › clap</kbd>
+    <kbd class="key ">S › clap</kbd>
     </div>
     <div class="keys">
-    <kbd class="key">D › hihat</kbd>
+    <kbd class="key ">D › hihat</kbd>
     </div>
     <div class="keys">
-    <kbd class="key">F › kick</kbd>
+    <kbd class="key ">F › kick</kbd>
     </div>
     <div class="keys">
-    <kbd class="key">G › tink</kbd>
+    <kbd class="key ">G › tink</kbd>
     </div>
+        </div>
 
     <audio id="boom" controls>
     <source src="sounds/boom.wav" type="audio/wav">
@@ -74,81 +47,6 @@
         Your browser does not support the audio tag.
     </audio>
 
-    <script>
-        let myKey = document.querySelectorAll(".key");
-        let boom = document.getElementById("boom");
-        let clap = document.getElementById("clap");
-        let hihat = document.getElementById("hihat");
-        let kick = document.getElementById("kick");
-        let tink = document.getElementById("tink");
-
-        window.addEventListener("keydown", playDrum);
-
-        function playDrum(evt){
-
-       if(evt.key=="a"){
-                boom.play();
-               boom.currentTime=0;
-               myKey[0].classList.toggle("hover");
-
-           setTimeout(blend, 200);
-           function blend() {
-            for(var i = 0; i < myKey.length; i++) {
-                console.log("current loop" + i);
-                myKey[i].classList.remove("hover");
-            }
-             }}
-           else if(evt.key=="s"){
-                clap.play();
-               clap.currentTime=0;
-                myKey[1].classList.toggle("hover");
-               setTimeout(blend, 200);
-
-           function blend() {
-            for(var i = 0; i < myKey.length; i++) {
-                console.log("current loop" + i);
-                myKey[i].classList.remove("hover");
-            }
-
-             }}
-            else if(evt.key=="d"){
-                hihat.play();
-               hihat.currentTime=0;
-                myKey[2].classList.toggle("hover");
-                setTimeout(blend, 200);
-             function blend() {
-            for(var i = 0; i < myKey.length; i++) {
-                console.log("current loop" + i);
-                myKey[i].classList.remove("hover");
-            }
-
-             }}
-            else if(evt.key=="f"){
-                kick.play();
-               kick.currentTime=0;
-                myKey[3].classList.toggle("hover");
-               setTimeout(blend, 200);
-             function blend() {
-            for(var i = 0; i < myKey.length; i++) {
-                console.log("current loop" + i);
-                myKey[i].classList.remove("hover");
-            }
-
-             }}
-            else if(evt.key=="g"){
-                tink.play();
-               tink.currentTime=0;
-                myKey[4].classList.toggle("hover");
-               setTimeout(blend, 200);
-             function blend() {
-            for(var i = 0; i < myKey.length; i++) {
-                console.log("current loop" + i);
-                myKey[i].classList.remove("hover");
-            }
-
-             }}
-            }
-
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
