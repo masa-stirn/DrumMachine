@@ -6,17 +6,28 @@
     <title>Drum Machine</title>
     <style>
         body{
-            background-image: url(background/drums.jpg);
-            background-size: 100%
+            background: url(background/drums.jpg) no-repeat center center fixed;
+            background-size: cover;
         }
         .key{
-            width: 10%;
-            height: 15%;
-            padding: 20px;
-            background: white;
+            width: 3em;
+            height: 2em;
+            background: purple;
             display: inline-block;
             text-align: center;
+            margin-bottom: 2em;
+            margin-left: 8em;
+            color: white;
+            padding-top: 0.7em;
         }
+
+        .keys{
+            margin-top: 5%;
+        }
+        audio {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -37,8 +48,62 @@
     <kbd class="key">G</kbd>
     </div>
 
-    <style>
+    <audio id="boom" controls>
+    <source src="sounds/boom.wav" type="audio/wav">
+        Your browser does not support the audio tag.
+    </audio>
+    <audio id="clap" controls>
+    <source src="sounds/clap.wav" type="audio/wav">
+        Your browser does not support the audio tag.
+    </audio>
+    <audio id="hihat" controls>
+    <source src="sounds/hihat.wav" type="audio/wav">
+        Your browser does not support the audio tag.
+    </audio>
+    <audio id="kick" controls>
+    <source src="sounds/kick.wav" type="audio/wav">
+        Your browser does not support the audio tag.
+    </audio>
+    <audio id="openhat" controls>
+    <source src="sounds/openhat.wav" type="audio/wav">
+        Your browser does not support the audio tag.
+    </audio>
 
-    </style>
+    <script>
+
+        let boom = document.getElementById("boom");
+        let clap = document.getElementById("clap");
+        let hihat = document.getElementById("hihat");
+        let kick = document.getElementById("kick");
+        let openhat = document.getElementById("openhat");
+
+        window.addEventListener("keydown", playDrum);
+
+        function playDrum(evt){
+
+       if(evt.key=="a"){
+                boom.play();
+               boom.currentTime=0;
+             }else if(evt.key=="s"){
+                clap.play();
+               clap.currentTime=0;
+             }
+            else if(evt.key=="d"){
+                hihat.play();
+               hihat.currentTime=0;
+             }
+            else if(evt.key=="f"){
+                kick.play();
+               kick.currentTime=0;
+             }
+            else if(evt.key=="g"){
+                openhat.play();
+               openhat.currentTime=0;
+             }
+
+            }
+
+
+    </script>
 </body>
 </html>
