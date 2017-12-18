@@ -6,10 +6,32 @@
         .container {
             max-height: 100vh;
         }
+        .red {
+        background: url(../background/red.png) no-repeat center center fixed;
+        background-size: cover;
+        }
+        .green {
+        background: url(../background/green.png) no-repeat center center fixed;
+        background-size: cover;
+        }
+        .white {
+         background: url(../background/white.png) no-repeat center center fixed;
+        background-size: cover;
+        }
+        .purple {
+        background: url(../background/purple.png) no-repeat center center fixed;
+        background-size: cover;
+        }
+        .gold{
+        background: url(../background/gold.png) no-repeat center center fixed;
+        background-size: cover;
+        }
 
         body{
             background: url(../background/drums.jpg) no-repeat center center fixed;
             background-size: cover;
+            position: relative;
+            z-index: -100;
         }
         .key{
             color: white;
@@ -32,3 +54,21 @@
         audio {
             display: none;
         }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    width: 280px;
+    margin: 0 auto;
+}
+
+footer a {
+    color: grey;
+}
